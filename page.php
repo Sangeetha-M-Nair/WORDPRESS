@@ -2,18 +2,16 @@
 get_header();
 
 while(have_posts()){
-    the_post();?>
+    the_post();
+    pageBanner(array(
+        // 'title'=>'Learn or earn',
+        'subtitle'=>'Hi this is the subtitle',
+        'photo'=>'https://images.unsplash.com/photo-1655468788731-e73291c96f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80'
+    ));
+    ?>
 
-<div class="page-banner">
-    <div class="page-banner__bg-image"
-        style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
-    <div class="page-banner__content container container--narrow">
-        <h1 class="page-banner__title"><?php the_title(); ?></h1>
-        <div class="page-banner__intro">
-            <p>dont forget to replace me later.</p>
-        </div>
-    </div>
-</div>
+
+
 <div class="container container--narrow page-section">
     <?php 
 // echo get_the_ID();  
