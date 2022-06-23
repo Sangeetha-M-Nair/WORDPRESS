@@ -6,9 +6,12 @@ while(have_posts()){
 
 
 //wordpress functions
-the_post();?>
+the_post();
 
-<div class="page-banner">
+pageBanner();
+?>
+
+<!-- <div class="page-banner">
     <div class="page-banner__bg-image"
         style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>)"></div>
     <div class="page-banner__content container container--narrow">
@@ -17,21 +20,22 @@ the_post();?>
             <p>dont forget to replace me later.....</p>
         </div>
     </div>
-</div>
+</div> -->
+
 <div class="container container--narrow page-section">
     <div class="metabox metabox--position-up metabox--with-home-link">
         <p>
-            <a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('event'); ?>"><i class="fa fa-home"
-                    aria-hidden="true"></i>
-Events Home</a> <span class="metabox__main">
-               <?php the_title(); ?>
+            <a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('event'); ?>"><i
+                    class="fa fa-home" aria-hidden="true"></i>
+                Events Home</a> <span class="metabox__main">
+                <?php the_title(); ?>
             </span>
         </p>
     </div>
     <div class=" generic-content">
         <?php  the_content(); ?>
     </div>
-<?php 
+    <?php 
 $relatedPrograms=get_field('related_programs'); //access to the the custom field
 // print_r($relatedPrograms);
 
@@ -43,11 +47,11 @@ echo '<h2 class="headline headline--medium">Related Program(s)</h2>';
 echo '<ul class="link-list min-list">';
 foreach($relatedPrograms as $program){ ?>
 
-<li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?>
-</a></li>
+    <li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?>
+        </a></li>
 
 
-<?php
+    <?php
 }
 
 echo '</ul>';

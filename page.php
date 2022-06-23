@@ -3,11 +3,7 @@ get_header();
 
 while(have_posts()){
     the_post();
-    pageBanner(array(
-        // 'title'=>'Learn or earn',
-        'subtitle'=>'Hi this is the subtitle',
-        'photo'=>'https://images.unsplash.com/photo-1655468788731-e73291c96f0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80'
-    ));
+    pageBanner();
     ?>
 
 
